@@ -1,4 +1,4 @@
-package cola.enlazada;
+package com.mycompany.cola.enlazada;
 
 /**
  *

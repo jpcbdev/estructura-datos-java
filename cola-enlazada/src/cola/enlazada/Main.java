@@ -1,4 +1,4 @@
-package cola.enlazada;
+package com.mycompany.cola.enlazada;
 
 import javax.swing.JOptionPane;
 
@@ -20,7 +20,9 @@ public class Main {
                         + "\n2 - Agregar valor al inicio"
                         + "\n3 - Recorrer lista de inicio a fin"
                         + "\n4 - Recorrer lista de fin a inicio"
-                        + "\n5 - Salir"));
+                        + "\n5 - Sacar dato del inicio"
+                        + "\n6 - Sacar dato especifico"
+                        + "\n9 - Salir"));
                 switch (menu) {
                     case 1: {
                         int dato = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese un dato numerico"));
@@ -33,19 +35,34 @@ public class Main {
                         break;
                     }
                     case 3: {
-                        JOptionPane.showMessageDialog(null, lista.imprimirDesdeInicio());
+                        lista.imprimirDesdeInicio();
                         break;
                     }
                     case 4: {
-                        JOptionPane.showMessageDialog(null, lista.imprimirDesdeFin());
+                        lista.imprimirDesdeFin();
                         break;
                     }
                     case 5: {
+                        lista.sacarAlInicio();
+                        break;
+                    }
+                    case 6: {
+                        if (!lista.listaVacia()) {
+                            int num = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese elnumero que contiene el nodo que desea eliminar"));
+                            lista.sacarEspecifico(num);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "La lista esta vacia");
+
+                        }
+
+                        break;
+                    }
+                    case 9: {
                         System.exit(0);
                         break;
                     }
                 }
-            } while (menu > 0 && menu < 5);
+            } while (menu > 0 && menu < 9);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.toString());
         }
@@ -53,3 +70,35 @@ public class Main {
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
